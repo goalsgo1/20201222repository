@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+   <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE9EVRENn26Z-M0AigTEZCjKqkaOhZeDc&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #d_map {
+        height: 100%;
+      }
+
+      /* 태그선택자,요소선택자 */
+      html,body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+     //재사용을 위한 선언
+      var map;// var myCar = new Sonata();
+		//37.478887, 126.878616
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("d_map"), {
+          center: { lat: 37.478887, lng: 126.878616 },
+          zoom: 16,
+        });
+      }
+    </script>
+  </head>
+  <body>
+  <!-- document가 받는 문서 이름은 mapTestStep1-1.html이고 이것을 객체화 해서 함수를 활용하면 제어가능. 
+	   DOM 트리 구성해야 한다.
+	   제이쿼리에서 제공하는 함수가 ready이다.
+	   이 함수를 내가 재정의(구현)하여 사용하고 싶다.
+	   -->
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			initMap();
+  		});
+  	</script>
+    <div id="d_map"></div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

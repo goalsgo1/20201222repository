@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 코딩이 끝나더라도 먼저 예측해 본 후 실행해서 확인할것. -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자손선택자와 후손 선택자 구분하기</title>
+<style type="text/css">
+	p            {color: blue;}
+	#header > h1 { color: red;} /* 자손 선택자  */
+	#section  h1 { color: orange;} /* 후손 선택자  */
+</style>
+</head>
+<body>
+	<div id="header">
+	<!-- header영역에 있는 h1태그를 비교해야 합니다. -->
+		<h1 class="title">네비게이션</h1><!-- 빨강:o|오렌지 -->
+		<div id="nav">
+			<h1>Navigation</h1><!-- 빨강|오렌지|검정 -->
+		</div>
+	</div>
+	<div id="section">
+	<!--  후손 선택자 선택자 구분하기 문자열 - h1태그 -->
+		<h1 class="title">후손 선택자</h1><!-- 오렌지 -->
+		<p>선택자 소개<h1>선택자 구분하기<!-- 오렌지 --></h1></p>
+	</div>
+</body>
+</html>

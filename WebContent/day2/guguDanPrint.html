@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function account(p_start, p_end){//p_end.value
+		//var s = document.f_guguDan.txtStart.value;
+		//var e = document.f_guguDan.txtEnd.value;
+		//alert("s : "+s+", e : "+e);
+		document.write("<center><h1>구구단</h1><table width='90%'><tr>");
+		//단수 처리하기
+		for(var i=p_start;i<=p_end;i++){
+			document.write("<td bgcolor='green' width='80px' height='50px' align='center'>",i,"단","</td>");
+			if(i==p_end) document.write("</tr><tr>");
+		}
+		//계산처리하기
+		for(var k=p_start;k<=p_end;k++){
+			document.write("<td bgcolor='yellow' width='80px' height='50' align='center'><font color='green'><b>");
+			for(var j=1;j<=9;j++){
+				document.write(k,"*",j,"=",k*j,"<br>");
+			}
+			document.write("</b><font></td>");
+		}
+		//바닥 처리하기
+		document.write("</tr></table>");
+		document.write("</center>");
+		//여기는 자바스크립트영역 태그 쓴다.그냥 쓸수가 없다. 왜냐하면 
+		document.write("<br>");
+//		document.write(7+parseInt("123")); // 전부 유효수치 정수임
+		document.write("시작단 : "+p_start+", 끝단 : "+p_end.value); // 전부 유효수치 정수임
+//		document.f_guguDan.submit();
+	}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	document.write("<h1>for문을 활용한 구구단 출력하기</h1>");
+</script>
+<!-- html땅이다.  document.write()-->
+<form id="f_guguDan" name="f_guguDan">
+시작단 : <input type="text" name="txtStart"><br>
+끝단:<input type="text" name="txtEnd"><br>
+<button id="btn_print" 
+onClick="javascript:account(document.f_guguDan.txtStart.value, document.f_guguDan.txtEnd.value)">구구단 출력하기</button>
+</form>
+</body>
+</html>

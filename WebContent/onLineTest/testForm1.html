@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제1[testForm1.html]</title>
+<script type="text/javascript">
+/********************************************************************
+ * 체크 박스의 경우 멀티 선택을 지정하는 속성이 제공되지 않으므로 사용자가 만들어서 제공해야 함.
+   체크 박스에 onChange이벤트를 추가하여 체크박스에 변화가 발생되면 브라우저가 감지하게 되고 그 때 
+ * test함수가 호출 됨.
+   이때 파라미터로 0,1,2,3을 받아서 그 값을 cb배열의 인덱스값과 같은지를 비교함.
+   만일 같으면 체크박스에 체크를 해주고 나머지는 0을 대입하여 체크가 해제 되도록 한다.
+ * @param pcb 사용자가 선택한 체크박스의 index값이 저장됨.
+ *******************************************************************/
+	function test(pcb){//변수 pcb에는 0,1,2,3중 하나씩 값이 들어온다.
+		for(var i=0;i<document.f_test1.cb.length;i++){
+			if(pcb==i){
+				document.f_test1.cb[i].checked=1;
+			}else{
+				document.f_test1.cb[i].checked=0;
+			}
+		}
+	}
+	function next(){
+		var temp = 1;//정답은 1번 부터 이므로 1로 초기화 합니다.
+		for(var i=0;i<document.f_test1.cb.length;i++){
+			if(document.f_test1.cb[i].checked==1){
+				document.f_test1.htest1.value=temp;
+			}else{
+				temp = temp + 1;
+			}
+		}		
+		document.f_test1.submit();//다음 문제로 이동합니다. - form전송으로 페이지를 이동시킴.
+	}
+</script>
+</head>
+<body>
+<form name="f_test1" method="get" action="testForm2.jsp">
+<input type="hidden" name="htest1"/>
+문제1. 다음 중 DML구문이 아닌 것을 고르시오.<br>
+<input type="checkbox" name="cb" onChange="test(0)">select<br>
+<input type="checkbox" name="cb" onChange="test(1)">insert<br>
+<input type="checkbox" name="cb" onChange="test(2)">create<br>
+<input type="checkbox" name="cb" onChange="test(3)">delete<br>
+<br>
+<input type="button" value="다음문제" onClick="next()"/>
+</form>
+</body>
+</html>

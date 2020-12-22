@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>combobox활용 - Atype으로...</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+</head>
+<body>
+<input id="cc1" class="easyui-combobox" data-options="
+        valueField: 'DEPTNO',
+        textField: 'DNAME',
+        url: '../datagrid/dept.json',
+        onSelect: function(rec){
+        	alert('당신이 선택한 부서이름은 '+rec.DNAME);
+            var url = '../getEmpList.jsp?deptno='+rec.DEPTNO;
+        }">
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>Simple Map-Step2-1[다중 마커]</title>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE9EVRENn26Z-M0AigTEZCjKqkaOhZeDc"></script>
+    <style type="text/css">
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      var map;
+      var marker;//Marker객체 생성하기
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 37.478887, lng: 126.878616 },
+                zoom: 16,
+              });   
+            var infowindow = new google.maps.InfoWindow();  
+			$.ajax({
+				url:'jsonShopInfo.jsp'
+			   ,dataType:'json'
+			   ,success:function(data){
+					var result = JSON.stringify(data);
+					var jsonDoc = JSON.parse(result);
+					for(var i=0;i<jsonDoc.length;i++){
+						//마커를 세번 생성하기
+				        marker = new google.maps.Marker({
+				        	id: i
+				           ,position: new google.maps.LatLng(jsonDoc[i].lat, jsonDoc[i].lng)
+				           ,map: map
+				           ,title: jsonDoc[i].loc
+				        });	
+						google.maps.event.addListener(marker,'click',(function(marker,i){
+							return function(){
+								infowindow.setContent('<b>주소:</b>'+jsonDoc[i].loc
+							+'<br><a href=http://www.naver.com>네이버</a><br><img src=../../images/r1.jpg width=100 height=70>');
+								infowindow.open(map,marker);
+							}
+						})(marker,i));
+						if(marker){
+							marker.addListener('click', function(){
+								map.setZoom(15);
+								map.setCenter(this.getPosition());
+							});
+						}
+					}
+			   }////////////////////서버와 비동기 통신 후 처리가 완료 되었을때[내용 다운로드 완료]
+			});/////////////////////end of ajax            
+    	});
+    </script>
+    <div id="map"></div>
+  </body>
+</html>
+
+
+
+
+
+

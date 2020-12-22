@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input[type=text] { background: green;}
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- jquery가 지원하지 않는 API는 표준 스크립트를 사용해야 함.
+선언 후 사용을 원칙으로 하고 순서를 바꿀때는 반드시 DOM스캔을 먼저 확인 후에 처리
+제이쿼리는 돔구성이 완료된 상태에서 동작함.
+ -->
+<script type="text/javascript">
+	$(document).ready(function(){//DOM구성이 완료되었을 때
+		$("#txt").css("color","red");
+		//$("#t_id").css("background","yellow");
+		$("#f").attr("method","get");
+		$("#f").attr("action","p169Action.jsp");
+		//$("#f").submit();
+		
+	});
+</script>
+<p id="txt">제이쿼리로 선택자 접근하기</p>
+<form id="f" action="p169Action.jsp" method="post">
+	<input type="text" id="t_id" value="apple"/>
+</form>
+</body>
+</html>

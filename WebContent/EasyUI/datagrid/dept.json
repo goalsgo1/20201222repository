@@ -1,0 +1,48 @@
+[
+	{
+		"LOC": "NEW YORK",
+		"DEPTNO": 10,
+		"DNAME": "ACCOUNTING"
+	},
+	{
+		"LOC": "DALLAS",
+		"DEPTNO": 20,
+		"DNAME": "RESEARCH"
+	},
+	{
+		"LOC": "CHICAGO",
+		"DEPTNO": 30,
+		"DNAME": "SALES"
+	},
+	{
+		"LOC": "서울",
+		"DEPTNO": 51,
+		"DNAME": "개발1팀"
+	},
+	{
+		"LOC": "서울2",
+		"DEPTNO": 52,
+		"DNAME": "개발2팀"
+	},
+	{
+		"LOC": "서울3",
+		"DEPTNO": 53,
+		"DNAME": "개발3팀"
+	},
+	{
+		"LOC": "BOSTON",
+		"DEPTNO": 40,
+		"DNAME": "OPERATION"
+	},
+	{
+		"DEPTNO": 41
+	},
+	{
+		"DEPTNO": 43
+	},
+	{
+		"LOC": "인천",
+		"DEPTNO": 42,
+		"DNAME": "개발1팀"
+	}
+]

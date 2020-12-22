@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>패턴 분석</title>
+<!-- 공통코드 추가하기[css, jquery js, easyui js] -->
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		var g_gubun;
+	</script>
+	<style type="text/css">
+		#d_msg {
+			border: 3px solid green;
+			width: 200px;
+			height: 80px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#tb_name').textbox('setValue', '테스트');
+			$('#tb_name').textbox({
+				icons: [{
+					iconCls:'icon-search',
+					handler: function(e){///이벤트 발동 되었을때- 진행됨.
+						$(e.data.target).textbox('setValue', 'Something added!');
+					}//////////end of handler
+				}]//////////////end of icons			
+			});//////////end of tb_name
+			$("#cb_search").combobox({
+				/**/
+				data: [
+					{code:'s0001', subject:'java'},
+					{code:'s0002', subject:'html', selected:true},
+					{code:'s0003', subject:'javascript'},
+				],
+				onChange:function(){
+					g_gubun=$("#cb_search").combobox('getValue');
+					alert(""+g_gubun);//what?
+				}
+			    
+			    //url: '../../cbsample.json' XXX.jsp or XXX.do()
+			});
+		});
+	</script>
+	<input id="tb_name" class="easyui-textbox">  
+	<br><br>
+	<input id="cb_search" class="easyui-combobox" name="cb_search"
+    	data-options="valueField:'code',textField:'subject'">	
+</body>
+</html>
+
+
+
+
+
+
+

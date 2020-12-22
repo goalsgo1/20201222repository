@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부서관리-시작화면</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+/* 
+	더블쿼테이션과 싱글쿼테이션은 구분하지 않지만 같이 사용할 때는 바깥쪽 더블이면 안쪽을 싱글로 
+	바깥쪽이 싱글이면 안쪽을 더블로 함.
+	datagrid에 접근할 때는 반드시 #아이디로 선언한 후 객체이름을 작성함.
+*/
+	$(document).ready(function(){
+		$("#dg_dept").datagrid({
+			url:'http://localhost:9000/EasyUI/datagrid/dept.json'
+			,onSelect:function(index,row){
+				//insert here
+				$("#tb_deptno").textbox('setValue',row.DEPTNO);
+				$("#tb_dname").textbox('setValue',row.DNAME);
+				$("#tb_loc").textbox('setValue',row.LOC);
+			}
+		});
+	});
+</script>
+<table id="dg_dept" class="easyui-datagrid" style="width:400px;height:250px"
+        data-options="fitColumns:true,singleSelect:true">
+    <thead>
+        <tr>
+            <th data-options="field:'DEPTNO',width:100, align:'center'">부서번호</th>
+            <th data-options="field:'DNAME',width:100, align:'center'">부서명</th>
+            <th data-options="field:'LOC',width:100,align:'center'">지역</th>
+        </tr>
+    </thead>
+</table>
+<hr>
+<input id="tb_deptno"
+       class="easyui-textbox" label="부서번호:"
+       style="width:200px;">
+<input id="tb_dname"
+       class="easyui-textbox" label="부서명:"
+       style="width:200px;">
+<input id="tb_loc"
+       class="easyui-textbox" label="지역:"
+       style="width:200px;">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

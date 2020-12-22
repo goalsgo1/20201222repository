@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>spanTest</title>
+<script type="text/javascript">
+//전변, 함수 선언, 호출해야 실행됨
+	function methodA(){
+		alert("methodA 호출 성공");
+	}
+	methodA();
+</script>
+</head>
+<body>
+여기<span id="sp_msg"></span>
+저기
+<!-- 
+자바는 구조지향적이어서 메소드 선언 위치에 바뀌어 있어도 접근이 잘 되지만
+절차지향적 언어의 경우 함수 선언 위치 혹은 태그 선언 순서에 따라 접근할 수도 있지만
+못할 수도 있으니까 주의 할 것.
+자바스크립트는 무조건 먼저 선언하고 사용해서 접근이 가능함
+컴파일을 하지 않는 언어이므로 런타임시에 모든것이 결정됨
+ -->
+<script type="text/javascript">
+//지변, 할수 있지만 하지 않음. 즉시 실행됨.
+	//document.getElementById("sp_msg").innerText="<strong>span태그는 보이지 않아요</strong>";
+	document.getElementById("sp_msg").innerHtml="<u>span태그는 보이지 않아요</u>";
+</script>
+</body>
+</html>

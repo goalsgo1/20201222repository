@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onkeyup Test</title>
+<script type="text/javascript">
+	function whenClick(e){
+		document.getElementById("d_msg").innerText="클릭 : "+e;
+	}
+	function whenKeyUp(e){
+		alert("keyup : "+e);
+		document.getElementById("d_msg").innerText="KeyUp : "+e;
+	}
+</script>
+</head>
+<body>
+	<h1 onclick="whenClick(event)">click</h1>
+	<input type="text" onKeyUp="whenKeyUp(event)">
+	<div id="d_msg"></div>
+</body>
+</html>

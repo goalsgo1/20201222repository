@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서버로 전송할때 사용하는 이벤트 핸들러-onsubmit</title>
+</head>
+<body>
+<!-- 여기에 붙이면 무조건 접근 불가능하다. 
+선언이 먼저 사용이 나중 사용을 먼저 하려고 하니 돔구성을 먼저 마친 후에 코드가 적용되도록 해줌.
+자바스크립트 코드를 head사용하지 않고 body에 사용한다.
+차이점
+-->
+<script type="text/javascript">
+	window.onload = function(){
+		document.getElementById("f_member").onsubmit = function(){
+//			var pw = document.getElementById("pw").value;
+			var pw = document.f_member.pw.value;
+		    var pw_check = document.getElementById("pw_check").value;
+		    //비번이 일치하나요?
+		    if(pw == pw_check){
+		    	alert("성공");
+		    }	
+		    else{
+		    	alert("다시 입력해 주세요.");
+		    	return false;
+		    }
+		};////////////end of onsubmit EventHandler
+	};////////////////end of 돔트리가 완성 되었을 때
+</script>
+<form id="f_member" name="f_member">
+	<table align="center" border="1" borderColor="red" width="500">
+		<tr>
+			<th width="150">아이디 : </th>
+			<td width="350">
+			<input type="text" size="12">
+			<div id="d_id"></div>
+			</td>
+		</tr>
+		<tr>
+			<th width="150">이름 : </th>
+			<td width="350">
+			<input type="text" size="12">
+			<div id="d_name"></div>
+			</td>
+		</tr>
+		<tr>
+			<th width="150">비번 : </th>
+			<td width="350">
+			<input type="text" size="12" id="pw" name="pw">
+			<div id="d_pw"></div>
+			</td>
+		</tr>
+		<tr>
+			<th width="150">비번확인 : </th>
+			<td width="350">
+			<input type="text" size="12" id="pw_check">
+			<div id="d_pw_check"></div>
+			</td>
+		</tr>
+		<tr>
+			<th width="100%" colspan="2" align="center">
+			<button id="btn_add">가입</button>
+			<button onClick="cancel()">취소</button>
+			</th>
+		</tr>
+	</table>
+</form>
+<!-- 여기에 붙이면 무조건 접근 가능하다. -->
+</body>
+</html>

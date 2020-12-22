@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="head">클릭</h1>
+	<script type="text/javascript">
+		var head = document.getElementById("head");//object
+		//이벤트 연결하기
+		head.onclick = function (){
+			alert("클릭 호출 성공");
+			//만일 이벤트를 한 번 처리 후 죽이고 싶다면
+			//head.onclick = null;
+		}
+	</script>
+</body>
+</html>

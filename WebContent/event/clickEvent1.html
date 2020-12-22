@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn_a">버튼 A</button>
+	<button id="btn_b">버튼 B</button>
+	<h1>버튼 A - <span id="count_a">0</span></h1>
+	<h1>버튼 B - <span id="count_b">0</span></h1>
+	<script type="text/javascript">
+		var btnA = document.getElementById('btn_a');
+		var btnB = document.getElementById('btn_b');
+		var countA = document.getElementById('count_a');
+		var countB = document.getElementById('count_b');
+		//이벤트 연결하기
+		btnA.onclick = function(){
+			countA.innerHTML = Number(countA.innerHTML)+1;
+		}
+	</script>
+</body>
+</html>

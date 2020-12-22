@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 태그 실습</title>
+</head>
+<body>
+
+<h2>Basic HTML Table</h2>
+
+<table border="7" style="width:100%">
+ <caption>사원목록</caption>
+ <colgroup>
+ 	<col span="2" style="background:red"/>
+    <col style="background:blue"/>
+ </colgroup>
+ <thead style="background:green">
+  <tr>
+    <th colspan="3">Firstname</th>
+    <th rowspan="3">Lastname</th> 
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+    <td>Jill</td>
+    <td rowspan="2">Jill</td>
+    <td>Smith</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

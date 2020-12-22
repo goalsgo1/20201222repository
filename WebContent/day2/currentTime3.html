@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>currentTime.html - 현재 시간 - JS와 HTML상호작용,관계,위치</title>
+</head>
+<body>
+<h1 id="clock2">현재 시간</h1>
+<script type="text/javascript">
+	var clock2 = document.getElementById("clock2");
+	setInterval(function(){
+		var temp = new Date().toString();
+		//temp = temp.slice(0,24);
+		//alert("temp:"+temp);
+		clock2.innerText = "<font color='red'>"+temp.slice(0,24)+"</font>";			
+	},1000);
+</script>
+</body>
+</html>
+
+
+

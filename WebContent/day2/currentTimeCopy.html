@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>currentTime.html - 현재 시간 - JS와 HTML상호작용,관계,위치</title>
+</head>
+<body>
+<script type="text/javascript">
+//여기에서 h1태그에 접근할 수 있다|없다.- 선언이 먼저 사용이 나중
+//해결할 수 있는 방법이 있다. 그것은 윈도우 객체의 onload이벤트를 통해서 dom트리 구성이 끝났을 때 
+//태그를 접근하도록 하는 것이다.
+	window.onload=function(){
+		var clock = document.getElementById("clock");
+		alert("onload ===> "+clock);
+	
+	};////////////////end of onload - 브라우저가 dom트리 구성을 마쳤을때
+</script>
+<h1 id="clock">현재 시간</h1>
+<script type="text/javascript">
+	var clock2 = document.getElementById("clock");
+	setInterval(function(){
+		clock2.innerHTML = new Date().toString();
+	},1000);
+	alert(clock2);
+	function timer(){
+		
+	}
+</script>
+</body>
+</html>

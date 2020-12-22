@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style type="text/css">
+	.high-light1-0 { background: yellow;}
+	.high-light1-1 { background: orange;}
+	.high-light1-2 { background: blue;}
+	.high-light1-3 { background: green;}
+	.high-light1-4 { background: pink;}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function (){
+			//배열 선언하기
+			var array = [
+				{name: 'Naver', link: 'http://naver.com'}
+			   ,{name: 'Daum', link: 'http://daum.net'}
+			   ,{name: 'Hanbit', link: 'http://hanb.co.kr'}
+			];
+			//실행문, 구현부
+			$.each(array,function(index, item){//h1요소 내부 - this->h1
+				var output='';
+			    output +='<a href="'+item.link+'">';
+			    output +='<h1>'+item.name+'</h1>';
+			    output +='</a>';
+			    document.body.innerHTML += output;
+			});//end of each
+		});//////end of ready
+	</script>
+	<a href="./classTest.html">이동</a>
+	<a href="window.location.back()">이전페이지</a>
+	<a href="window.location.go(1)">다음페이지</a>
+</body>
+</html>

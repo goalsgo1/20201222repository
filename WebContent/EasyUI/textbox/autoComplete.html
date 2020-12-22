@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>autoComplete.html-자동완성 구현 화면</title>
+<style type="text/css">
+	#d_result {
+		position: absolute;
+		border: 1px solid black;
+		background: orange;
+		width: 200;
+		height: 60;
+	}
+</style>
+<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+<script type="text/javascript">
+	function search(){
+		//alert("11");
+		$("#d_result").show();
+		//$("#d_result").css("left", $("#keyword").offset().left+"px");
+		$("#d_result").css("left", 50+"px");
+//		$("#d_result").css("top", 20+"px");
+		$("#d_result").css("top", $("#keyword").offset().bottom+"px");
+		$("#d_result").html("<table><tr><td>미정</td></tr><tr><td>미정</td></tr><tr><td>미정</td></tr></table>");
+	}
+	function search2(){
+		$("#d_result").show();
+		$("#d_result").css("left", $("#keyword2").offset().left+"px");
+		$("#d_result").css("top", $("#keyword2").offset().bottom+"px");
+		$("#d_result").html("<table><tr><td>java</td></tr><tr><td>oracle</td></tr><tr><td>html</td></tr></table>");
+	}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#d_result").hide();
+	});
+</script>
+<input type="text" id="keyword" name="keyword" size="30" onkeyup="search()">
+<input type="text" id="keyword2" name="keyword2" size="20" onkeyup="search2()">
+<div id="d_result"></div>
+</body>
+</html>

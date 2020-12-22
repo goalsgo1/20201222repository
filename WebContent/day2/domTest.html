@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(){
+		document.write("<u>밑줄글씨</u>");
+		document.write("<table border='1' width='300px' height='150px'>");
+		for(var i=0;i<5;i++){
+			document.write("<tr>");
+			document.write("<td>"+i+"</td>");
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	}
+</script>
+</head>
+<body>
+   <b>굵은글씨</b>
+   <script type="text/javascript">
+   test();
+   		//alert("111");body태그에 스크립트 코드는 따로 호출하지 않더라도 자동으로 실행됨.
+   </script>
+</body>
+</html>

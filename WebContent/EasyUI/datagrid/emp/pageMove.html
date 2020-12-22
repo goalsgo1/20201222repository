@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시작페이지</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		function move(){
+			$("#dg").datagrid({
+				url:'data.jsp'
+               ,onLoadSuccess:function(data){
+            	   alert("onload..."+data);
+               }				
+			});			
+		}	
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){//익명함수로 처리하기 - 딱 한번 호출됨.
+		$("#dg").datagrid({
+			data:[
+				{code:'A001', name:'JAVA'}
+			   ,{code:'B001', name:'HTML'}
+			]
+		   ,title:'페이지 이동 테스트'
+		   ,method:'post'
+		});
+	});
+</script>
+<button onclick="move()">전송</button>
+<table id="dg" class="easyui-datagrid" style="width:400px;height:250px"
+        data-options="fitColumns:true,singleSelect:true">
+    <thead>
+        <tr>
+            <th data-options="field:'code',width:100">Code</th>
+            <th data-options="field:'name',width:100">Name</th>
+        </tr>
+    </thead>
+</table>
+</body>
+</html>

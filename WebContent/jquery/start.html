@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+var jq2 = $.noConflict();
+	function test(){
+		alert("jq2 : "+jq2("#mem_id").val());//똑같은 제이쿼리 중에서 버전에 따라 구분해서 사용가능	
+	}
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var g_id=null;//전역변수
+	var g_id2;//전연변수
+	//제이쿼리 버전에 따라서 충돌없이 양쪽 버전을 모두 사용하고 싶을 때
+	//다른 언어에서도 $기호를 쓰다보니 서로 충돌이 발생하기도 함.
+	var jq1 = $.noConflict();
+	function move(p_id){
+		alert("p_id : "+p_id+", g_id : "+g_id+", g_id2 : "+g_id2);
+		//location.href="move.jsp?mem_id="+p_id;
+	}
+	function newWinTest(){
+		  alert("newWinTest : "+jq1("#mem_id").val());
+//		  newWin=window.open('jQueryMemberShip.html','jQueryMemberShip','toolbar=no,scrollbars=no,top=200,left=300,width=170,height=50');
+		  newWin=window.open('jQueryMemberShip.html','_self');
+		  //var str='새창 열기/닫기 예제<BR><BR>';
+		  //str+='<CENTER><INPUT type=button value="닫기" onClick="window.close()"></CENTER>';
+		  //newWin.document.write(str);
+		}	
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	window.onload = function(){
+		g_id = document.getElementById("mem_id").value;
+		alert("g_id:"+g_id);//haha
+	};
+	
+	jq1(document).ready(function(){
+		test();
+		g_id2 = jq1("#mem_id").val();
+		alert("g_id2:"+g_id2);//haha
+	});
+</script>
+<form name="f">
+<input type="text" id="mem_id" name="mem_id" value="haha">
+<!-- <a href="move.jsp?mem_id=tomato">이동</a> -->
+<!-- <a href="javascript:move(document.f.mem_id.value)">이동</a> -->
+<a href="javascript:window.location.href='move.jsp'">이동</a>
+<FORM><INPUT type="button" value="새창 열기" onClick="newWinTest()"></FORM>
+</form>
+</body>
+</html>

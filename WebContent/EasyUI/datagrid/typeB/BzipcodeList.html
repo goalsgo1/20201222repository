@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부서관리-typeB[태그와 스크립트를 섞기]</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		var g_deptno=0;
+	//조회 버튼을 누른거야?
+		function getDeptList(){
+			
+		}
+	//입력 버튼을 눌렀나봐!!!	
+		function addDept(){
+			
+		}
+	//수정 버튼을 연습해볼까?
+		function editDept(){
+			
+		}
+	//삭제해 봐요. 우리
+		function removeDept(){
+			//delete from dept where deptno = ?
+					
+		}
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){//순서에 상관이 없다.
+		/*
+		$("#pp_dept").pagination({
+			//insert here
+			total: 10
+		   ,pageSize: 15
+		   ,pageList: [5,10,15]
+		});
+		*/
+		$("#dg_dept").datagrid({
+			title:"부서관리"
+		   ,url:"../dept.json"
+		   ,fitColumns:true
+		   ,singleSelect:true
+		   ,toolbar:'#tb_dept'
+		   ,onSelect: function(index,row){
+			    //var row2 = $("#dg_dept").datagrid("getSelected");
+			    g_deptno = row.DEPTNO;
+			    //g_deptno = row2.DEPTNO;
+				//alert(index+", "+row+", "+row.DEPTNO+", "+row2.DNAME);	
+		    }///////////////////end of onSelect
+		   ,onDblClickCell:function(index, field, value){
+			   if("LOC" == field){//너 지역을 선택한거냐?
+				   location.href="../deptDelete.jsp?deptno="+g_deptno;//페이지 이동 , url이 바뀜
+			   }
+		   }
+		});/////////////////////end of datagrid	
+	});/////////////////////////end of ready-스캔완료
+</script>
+<table id="dg_dept" class="easyui-datagrid" style="width:700px;height:250px">
+    <thead>
+        <tr>
+            <th data-options="field:'DEPTNO',width:100">부서번호</th>
+            <th data-options="field:'DNAME',width:100">부서명</th>
+            <th data-options="field:'LOC',width:100,align:'right'">지역</th>
+        </tr>
+    </thead>
+</table>
+<div id="tb_dept">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="getDeptList()">조회</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addDept()">입력</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editDept()">수정</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeDept()">삭제</a>
+</div>
+<script type="text/javascript">
+$("#pp_dept").pagination({
+	//insert here
+	total: 20
+   ,pageSize: 10
+   ,pageList: [3,7,10,20]
+});
+</script>
+<div id="pp_dept" class="easyui-pagination" style="width:700px;background:#efefef;border:1px solid #ccc;">
+</div>
+<div id="pp" class="easyui-pagination" style="width:700px;background:#efefef;border:1px solid #ccc;"
+        data-options="total:2000,pageSize:10">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

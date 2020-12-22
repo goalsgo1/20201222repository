@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>textboxTest.html</title>
+<!-- 공통코드 추가하기[css, jquery js, easyui js] -->
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<style type="text/css">
+		#d_msg {
+			border: 3px solid green;
+			width: 200px;
+			height: 80px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#tb').textbox('setValue', '테스트');
+			$('#_easyui_textbox_input1').textbox('setValue', '테스트3');
+		});
+	</script>
+	<div id="d_msg"></div><!-- 공간분할용도로 사용하거나 메시지 출력할 때 사용함, ajax 화면을 추가할 때 -->
+<!-- 표준이 아닌 easyui를 사용했을 때 추가되는 태그들을 관찰해 볼까? -->
+    <div style="margin-bottom:20px">
+        <input value="kim@hot.com" id="tb"
+               class="easyui-textbox" label="Email:" 
+               labelPosition="top" data-options="prompt:'Enter a email address...',validType:'email'" 
+               style="width:100%;">
+    </div>
+	<script type="text/javascript">
+	    //var email = $('#tb').textbox('getValue');	
+		$("#d_msg").text("div영역 : "+$('#tb').val());
+		//t.textbox('setValue', $(this).val());
+		$('#_easyui_textbox_input1').textbox('setValue', '테스트2');
+	</script>    
+</body>
+</html>
+
+
+
+
+
+
+

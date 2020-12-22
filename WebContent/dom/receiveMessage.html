@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkTest(size){
+		//alert(document.f_receive.checkAll.checked);
+		//전체체크 박스를 선택했을 때
+		if(document.f_receive.checkAll.checked==1){
+			if(size==1){
+				document.f_receive.checkAll.checked = 1;
+				document.f_receive.from.checked = 1;			
+			}else{
+				for(var i=0;i<size;i++){
+					document.f_receive.checkAll.checked = 1;
+					document.f_receive.from[i].checked = 1;
+				}
+			}
+		}
+		//전체 체크 박스를 해제 했을 때
+		
+		else if(document.f_receive.checkAll.checked==0){
+			if(size==1){
+				document.f_receive.checkAll.checked = 0;
+				document.f_receive.from.checked = 0;			
+			}else{
+				for(var i=0;i<size;i++){
+					document.f_receive.from[i].checked = 0;
+				}
+			}			
+		}
+	}
+</script>
+</head>
+<body>
+<center>
+	<form name="f_receive">
+	<table border="1" borderColor="orange" width="500px" height="200px">
+		<thead>받은 쪽지함</thead>
+		<tr height="70px">
+			<th><input type="checkbox" name="checkAll" onclick="checkTest(1)"></th>
+			<th>순번</th>
+			<th>보낸이</th>
+		</tr>
+		<tr>
+			<th><input type="checkbox" name="from"></th>
+			<th>1</th>
+			<th>이순신</th>
+		</tr>
+<!-- 		
+		<tr>
+			<th><input type="checkbox" name="from"></th>
+			<th>2</th>
+			<th>강감찬</th>
+		</tr>
+		<tr>
+			<th><input type="checkbox" name="from"></th>
+			<th>3</th>
+			<th>김춘추</th>
+		</tr>
+ -->		
+	</table>
+	</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>currentTime.html - 현재 시간 - JS와 HTML상호작용,관계,위치</title>
+</head>
+<body>
+<script type="text/javascript">
+//여기에서 h1태그에 접근할 수 있다|없다.- 선언이 먼저 사용이 나중
+	var clock = document.getElementById("clock");
+	alert(clock);
+</script>
+<h1 id="clock">현재 시간</h1>
+<script type="text/javascript">
+	var clock2 = document.getElementById("clock");
+	setInterval(function(){
+		clock2.innerHTML = new Date().toString();
+	},1000);
+	alert(clock2);
+	function timer(){
+		
+	}
+</script>
+</body>
+</html>

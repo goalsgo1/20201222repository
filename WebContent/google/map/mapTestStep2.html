@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>Simple Map-Step2[말풍선]</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE9EVRENn26Z-M0AigTEZCjKqkaOhZeDc&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      var map;
+      var marker;//Marker객체 생성하기
+
+      function initMap() {
+    	var infowindow = new google.maps.InfoWindow();  
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 37.478887, lng: 126.878616 },
+          zoom: 16,
+        });
+        marker = new google.maps.Marker({
+        	position: new google.maps.LatLng(37.478887, 126.878616)
+           ,map: map
+           ,title: '현재 내 위치'
+        });
+        infowindow.open(map,marker);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
+
+
+
+
+
+

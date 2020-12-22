@@ -1,0 +1,131 @@
+[
+   {
+      "ENAME": "SMITH",
+      "HIREDATE": "Dec 17, 1980 12:00:00 AM",
+      "EMPNO": 7369,
+      "MGR": 7902,
+      "JOB": "CLERK",
+      "DEPTNO": 20,
+      "SAL": 800
+   },
+   {
+      "ENAME": "ALLEN",
+      "COMM": 300,
+      "HIREDATE": "Feb 20, 1981 12:00:00 AM",
+      "EMPNO": 7499,
+      "MGR": 7698,
+      "JOB": "SALESMAN",
+      "DEPTNO": 30,
+      "SAL": 1600
+   },
+   {
+      "ENAME": "WARD",
+      "COMM": 500,
+      "HIREDATE": "Feb 22, 1981 12:00:00 AM",
+      "EMPNO": 7521,
+      "MGR": 7698,
+      "JOB": "SALESMAN",
+      "DEPTNO": 30,
+      "SAL": 1250
+   },
+   {
+      "ENAME": "JONES",
+      "HIREDATE": "Apr 2, 1981 12:00:00 AM",
+      "EMPNO": 7566,
+      "MGR": 7839,
+      "JOB": "MANAGER",
+      "DEPTNO": 20,
+      "SAL": 2975
+   },
+   {
+      "ENAME": "MARTIN",
+      "COMM": 1400,
+      "HIREDATE": "Sep 28, 1981 12:00:00 AM",
+      "EMPNO": 7654,
+      "MGR": 7698,
+      "JOB": "SALESMAN",
+      "DEPTNO": 30,
+      "SAL": 1250
+   },
+   {
+      "ENAME": "BLAKE",
+      "HIREDATE": "May 1, 1981 12:00:00 AM",
+      "EMPNO": 7698,
+      "MGR": 7839,
+      "JOB": "MANAGER",
+      "DEPTNO": 30,
+      "SAL": 2850
+   },
+   {
+      "ENAME": "CLARK",
+      "HIREDATE": "Jun 9, 1981 12:00:00 AM",
+      "EMPNO": 7782,
+      "MGR": 7839,
+      "JOB": "MANAGER",
+      "DEPTNO": 10,
+      "SAL": 2450
+   },
+   {
+      "ENAME": "SCOTT",
+      "HIREDATE": "Apr 19, 1987 12:00:00 AM",
+      "EMPNO": 7788,
+      "MGR": 7566,
+      "JOB": "ANALYST",
+      "DEPTNO": 20,
+      "SAL": 3000
+   },
+   {
+      "ENAME": "KING",
+      "HIREDATE": "Nov 17, 1981 12:00:00 AM",
+      "EMPNO": 7839,
+      "JOB": "PRESIDENT",
+      "DEPTNO": 10,
+      "SAL": 5000
+   },
+   {
+      "ENAME": "TURNER",
+      "COMM": 0,
+      "HIREDATE": "Sep 8, 1981 12:00:00 AM",
+      "EMPNO": 7844,
+      "MGR": 7698,
+      "JOB": "SALESMAN",
+      "DEPTNO": 30,
+      "SAL": 1500
+   },
+   {
+      "ENAME": "ADAMS",
+      "HIREDATE": "May 23, 1987 12:00:00 AM",
+      "EMPNO": 7876,
+      "MGR": 7788,
+      "JOB": "CLERK",
+      "DEPTNO": 20,
+      "SAL": 1100
+   },
+   {
+      "ENAME": "JAMES",
+      "HIREDATE": "Dec 3, 1981 12:00:00 AM",
+      "EMPNO": 7900,
+      "MGR": 7698,
+      "JOB": "CLERK",
+      "DEPTNO": 30,
+      "SAL": 950
+   },
+   {
+      "ENAME": "FORD",
+      "HIREDATE": "Dec 3, 1981 12:00:00 AM",
+      "EMPNO": 7902,
+      "MGR": 7566,
+      "JOB": "ANALYST",
+      "DEPTNO": 20,
+      "SAL": 3000
+   },
+   {
+      "ENAME": "MILLER",
+      "HIREDATE": "Jan 23, 1982 12:00:00 AM",
+      "EMPNO": 7934,
+      "MGR": 7782,
+      "JOB": "CLERK",
+      "DEPTNO": 10,
+      "SAL": 1300
+   }
+]

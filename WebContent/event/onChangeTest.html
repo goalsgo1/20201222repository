@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onChange 핸들러</title>
+<script type="text/javascript">
+	function check(u_name,sel){
+		if(u_name.value.length > 4){
+			alert("4자만 입력할 수 있습니다.");
+			u_name.value="";
+		}
+		document.getElementById("t_menu").value = sel.value;
+		
+	}
+	function check2(sel){//sel:document.getElementById(menu)
+		document.getElementById("d_result").innerHTML = sel.value;
+//		check("111",sel);//내안에 있는 메소드 재사용함.
+		check(document.getElementById("t_menu"),sel);//내안에 있는 메소드 재사용함.
+	}
+</script>
+</head>
+<body>
+<input type="text" id="t_menu" size="20" value="컵밥" onchange="check(this)">
+<select id="menu" name="menu" onchange="check2(this)">
+	<option value="k">김밥</option>
+	<option value="d">떡볶이</option>
+	<option value="s">돈까스</option>
+	<option value="n">냉면</option>
+	<option value="x">된장찌게</option>
+</select>
+<div id="d_result"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

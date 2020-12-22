@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 버블링 방식</title>
+<style type="text/css">
+	* {border: 3px solid black;}
+</style>
+</head>
+<!-- 
+이벤트 버블링은 자식노드에서 부모 노드 순으로 이벤트를 실행하는 것을 말함.
+
+ -->
+	<div onclick="alert('outter-div 이벤트 버블링')">
+		<div onclick="alert('inner-div 이벤트 버블링')">
+			<h1 onclick="alert('header 이벤트 버블링')">
+				<p onclick="alert('이벤트 버블링')">이벤트 전이</p>
+			</h1>
+		</div>
+	</div>
+</body>
+</html>
